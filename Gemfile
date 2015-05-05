@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4.1'
 gem 'pg', '~> 0.18.1', group: :production
+gem 'puma', '~> 2.11.2'
+gem 'quiet_assets', '~> 1.1.0', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
