@@ -17,6 +17,7 @@ gem 'quiet_assets', '~> 1.1.0', group: :development
 gem 'slim', '~> 3.0.3'
 gem 'pry-rails', '~> 0.3.4', group: :development
 gem 'responders', '~> 2.1.0'
+gem 'materialize-sass', '~> 0.96.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
