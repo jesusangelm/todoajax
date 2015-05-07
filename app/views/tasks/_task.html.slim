@@ -1,5 +1,8 @@
 .col.s6
-  .card.blue-grey.darken-1
+  .card.orange.darken-1
     .card-content.white-text
       span.card-title = task.content
       p = task.complete
+      = link_to edit_task_path(task), remote: true do
+        i.small.mdi-editor-mode-edit
+      end

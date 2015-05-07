@@ -11,10 +11,14 @@ class TasksController < ApplicationController
     @task = Task.create(task_params)
   end
 
+  def update
+    @task.update_attributes(task_params)
+  end
+
   private
 
   def set_tasks
-    @task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def all_tasks
