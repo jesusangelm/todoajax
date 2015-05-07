@@ -1,8 +1,11 @@
-.col.s6
+.col.s12.m6.i6
   .card.orange.darken-1
     .card-content.white-text
-      span.card-title = task.content
-      p = task.complete
+      p = task.content.capitalize
+    .card-action
       = link_to edit_task_path(task), remote: true do
         i.small.mdi-editor-mode-edit
+      end
+      = link_to task, remote: true, method: :delete, data: { confirm: "seguro?" } do
+        i.small.mdi-content-clear
       end
