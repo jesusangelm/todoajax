@@ -15,6 +15,10 @@ class TasksController < ApplicationController
     @task.update_attributes(task_params)
   end
 
+  def destroy
+    @task.destroy
+  end
+
   private
 
   def set_tasks
