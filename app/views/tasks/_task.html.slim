@@ -1,11 +1,19 @@
-.col.s12.m6.i6
-  .card.orange.darken-1
-    .card-content.white-text
-      p = task.content.capitalize
-    .card-action
-      = link_to edit_task_path(task), remote: true do
-        i.small.mdi-editor-mode-edit
-      end
-      = link_to task, remote: true, method: :delete, data: { confirm: "seguro?" } do
-        i.small.mdi-content-clear
-      end
+li.collection-item class=(task.complete ? "green lighten-2 active":"orange lighten-2")
+  div
+    = task.content.capitalize 
+    = link_to edit_task_path(task), remote: true, class: "secondary-content" do
+      i.black-text.small.mdi-editor-mode-edit
+    = link_to task, remote: true, class: "secondary-content", method: :delete, data: { confirm: "seguro?" } do
+      i.black-text.small.mdi-content-clear
+
+/.col.s12.m6.i6
+  /.card.orange.darken-1
+    /.card-content.white-text
+      /p = task.content.capitalize
+    /.card-action
+      /= link_to edit_task_path(task), remote: true do
+        /i.small.mdi-editor-mode-edit
+      /end
+      /= link_to task, remote: true, method: :delete, data: { confirm: "seguro?" } do
+        /i.small.mdi-content-clear
+      /end

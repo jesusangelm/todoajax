@@ -1,5 +1,5 @@
 .row
-  .col.s12
+  .col.s12#title-head
     h1.center-align Tareas
   .fixed-action-btn
     = link_to new_task_path, remote: true, class: "btn-floating btn-large waves-effect waves-light green" do
@@ -9,4 +9,5 @@
     #task-form style="display:none;"
   .col.s12
     #tasks
-      =render @tasks
+      ul.collection
+        =render @tasks
