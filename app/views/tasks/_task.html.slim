@@ -5,15 +5,8 @@ li.collection-item class=(task.complete ? "green lighten-2 active":"orange light
       i.black-text.small.mdi-editor-mode-edit
     = link_to task, remote: true, class: "secondary-content", method: :delete, data: { confirm: "seguro?" } do
       i.black-text.small.mdi-content-clear
+    = form_for task, remote: true do |f|
+      p
+        = f.check_box :complete, { id: "task_complete_#{task.id}" }
+        = f.label "complete_#{task.id}", "Estado"
 
-/.col.s12.m6.i6
-  /.card.orange.darken-1
-    /.card-content.white-text
-      /p = task.content.capitalize
-    /.card-action
-      /= link_to edit_task_path(task), remote: true do
-        /i.small.mdi-editor-mode-edit
-      /end
-      /= link_to task, remote: true, method: :delete, data: { confirm: "seguro?" } do
-        /i.small.mdi-content-clear
-      /end
