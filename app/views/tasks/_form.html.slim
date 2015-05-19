@@ -1,4 +1,10 @@
-= simple_form_for @task, remote: true do |f|
-  = f.input :content
-  = f.input :complete
-  = f.button :submit
+= form_for @task, remote: true do |f|
+  .input-field 
+    = f.text_field :content
+    = label_tag :content, "Contenido"
+  p
+    = f.check_box :complete
+    = f.label :complete, "Estado"
+  button.btn.waves-effect.waves-light type="submit" name="commit"
+    | Guardar
+    i.mdi-content-send.right
