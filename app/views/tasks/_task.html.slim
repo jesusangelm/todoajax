@@ -2,9 +2,9 @@ li.collection-item class=(task.complete ? "green lighten-2 active":"orange light
   div
     = task.content.capitalize 
     = link_to edit_task_path(task), remote: true, class: "secondary-content" do
-      i.black-text.small.mdi-editor-mode-edit
+      i.blue-grey-text.text-darken-3.small.mdi-editor-mode-edit
     = link_to task, remote: true, class: "secondary-content", method: :delete, data: { confirm: "seguro?" } do
-      i.black-text.small.mdi-content-clear
+      i.red-text.text-darken-4.small.mdi-content-clear
     = form_for task, remote: true do |f|
       = f.check_box :complete, id: "task_complete_#{task.id}", class: "checkbox-submit"
       = f.label "complete_#{task.id}", "Estado" 
