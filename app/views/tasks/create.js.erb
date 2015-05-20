@@ -1,2 +1,6 @@
 $('#tasks ul.collection').html("<%= j (render @tasks) %>");
 $('#task-form').slideUp(350)
+
+$('.checkbox-submit').on('click', function() {
+  $(this).parent('form').submit();
+});

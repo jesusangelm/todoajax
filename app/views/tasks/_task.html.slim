@@ -6,7 +6,6 @@ li.collection-item class=(task.complete ? "green lighten-2 active":"orange light
     = link_to task, remote: true, class: "secondary-content", method: :delete, data: { confirm: "seguro?" } do
       i.black-text.small.mdi-content-clear
     = form_for task, remote: true do |f|
-      p
-        = f.check_box :complete, { id: "task_complete_#{task.id}" }
-        = f.label "complete_#{task.id}", "Estado"
+      = f.check_box :complete, id: "task_complete_#{task.id}", class: "checkbox-submit"
+      = f.label "complete_#{task.id}", "Estado" 
 

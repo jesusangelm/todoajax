@@ -4,4 +4,10 @@
 
 $(document).ready ->
   $('#title-head').on 'click', ->
-    $("#task-form").slideToggle 350
+    $('#task-form').slideToggle 350
+    return
+  $('.checkbox-submit').on 'click', ->
+    $(this).parent('form').submit()
+    return
+  return
+
