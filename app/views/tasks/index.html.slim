@@ -1,6 +1,6 @@
 .row
   .col.s12#title-head
-    h1.green-text.text-darken-4.center-align Tareas
+    h4.green-text.text-darken-4 Mis Tareas
   .fixed-action-btn
     = link_to new_task_path, remote: true, class: "btn-floating btn-large waves-effect waves-light green" do
       i.mdi-content-add
@@ -10,7 +10,7 @@
   .col.s12
     #tasks
       ul.collection.z-depth-2
-        - if @tasks
+        - unless @tasks.empty?
           =render @tasks
         - else
           li.collection-item.active.red No tienes tareas en estos momentos.
