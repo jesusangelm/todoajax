@@ -7,6 +7,23 @@ head
   = csrf_meta_tags
 
 body
+  nav
+    .green.nav-wrapper
+      = link_to "TodoAJAX", root_path, class: "brand-logo center"
+      ul.right
+        - if user_signed_in?
+          li = link_to current_user.email, edit_user_registration_path, class: "tooltipped", data: { delay: "50",  position: "bottom", tooltip: "Editar cuenta" }
+          li = link_to destroy_user_session_path, method: :delete, class: "tooltipped", data: { delay: "50",  position:"bottom", tooltip: "Salir" } do
+            i.mdi-maps-directions-walk
+        - else
+          li = link_to new_user_session_path, class: "tooltipped", data: { delay: "50", position: "bottom", tooltip: "Entrar!" } do
+            i.mdi-action-account-circle
+          li = link_to new_user_registration_path, class: "tooltipped", data: { delay: "50", position: "bottom", tooltip: "Registrate!" } do
+            i.mdi-social-person-add
+  .container
+    .notifications
+      p.notice = notice
+      p.alert = alert
   .container
     = yield
 
