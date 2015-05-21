@@ -1,6 +1,7 @@
 .row
   .col.s12
-    h1.center-align Bienvenido a TodoAjax
+    h1.green-text.text-darken-4.center-align Bienvenido a TodoAjax
+    p.center-align Un administrador de tareas super basico y sencillo de usar.
     p.center-align
       - unless user_signed_in?
         = link_to "Registrate", new_user_registration_path, class: "waves-effect waves-teal btn-flat"
