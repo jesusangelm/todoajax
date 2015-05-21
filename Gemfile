@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4.1'
 gem 'pg', '~> 0.18.1', group: :production
+gem 'rails_12factor', group: :production
 gem 'puma', '~> 2.11.2'
 gem 'quiet_assets', '~> 1.1.0', group: :development
 gem 'slim', '~> 3.0.3'
