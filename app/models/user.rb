@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tasks, dependent: :destroy
+
+  after_create :send_email_notification
+
+  def send_email_notification
+    AdminMailer.new_user_registered(self).deliver
+  end
 end
