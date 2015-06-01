@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   after_create :send_email_notification
 
   def send_email_notification
-    AdminMailer.new_user_registered(self).deliver
+    SendEmailJob.new.async.perform(self)
   end
 end
